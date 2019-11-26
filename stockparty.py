@@ -92,6 +92,8 @@ class mainWindow(Frame):
 		newPrices = []
 		points = []
 		for i in range(len(priceHistory[-1])):
+            # The reason I divide by 1.3 here is because the base price of beer for this original project was €1.3.
+            # Keep this if you want, it won't mess with the concept, or change it if you want to.
 			points.append(priceHistory[-1][i]/1.3)
 			
 		sales = root.get_values()
