@@ -72,12 +72,12 @@ class mainWindow(Frame):
 			root.entries.append(entry)
 			
 		### If you want to change the text on the button, change it here.
-		root.calc_button = Button(root, text = "Bereken nieuwe prijzen", command = root.calculatePrices)
+		root.calc_button = Button(root, text = "Calculate new prices", command = root.calculatePrices)
 		root.calc_button.grid(row = len(beers) + 2, column = 1)
 		
 		### Button to implement stock crash, if you don't want to use this button accidentally, change the line to
 		### root.crash_button = Button(root, text = "Beurscrash!", state = DISABLED, command = root.crash)
-		root.crash_button = Button(root, text = "Beurscrash!", command = root.crash)
+		root.crash_button = Button(root, text = "Stock crash!", command = root.crash)
 		root.crash_button.grid(row = len(beers) + 2, column = 0)
 	
 	### This function retrieves the values of the widgets after you click the button and converts it to float.
@@ -85,7 +85,7 @@ class mainWindow(Frame):
 		try:
 			return [float(entry.get()) for entry in root.entries]
 		except ValueError:
-			message.showerror("Error", "Geef enkel getalwaarden in aub.")
+			message.showerror("Error", "Please only enter numerical values.")
 	
 	### Function to calculate the new prices.
 	def calculatePrices(root):
@@ -133,7 +133,7 @@ class mainWindow(Frame):
 		np.savetxt("TimeHistory_"+str(currentTime)+".txt", time, fmt = '%s')
 		
 		### Show the new prices.
-		message.showinfo("Nieuwe prijzen", "\n".join(info))
+		message.showinfo("Nieuwe prices", "\n".join(info))
 		
 		### Update the graphs.
 		root.showGraphs()
@@ -285,7 +285,7 @@ class mainWindow(Frame):
 		
 
 root = Tk()
-root.title("Beursfuif")
+root.title("Stock party")
 
 fuif = mainWindow(root)
 fuif.run()
