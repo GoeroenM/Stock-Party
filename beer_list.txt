@@ -1,0 +1,7 @@
+Bieren	Prijzen
+Stella	1.3
+Duvel	2.0
+Cornet	2.0
+Chimay	2.5
+St.Bernardus	2.5
+Kriek	2.0
