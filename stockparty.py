@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*- 
-from Tkinter import *
-import tkMessageBox as message
+from tkinter import *
+import tkinter.messagebox as message
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as md
@@ -221,7 +221,7 @@ class mainWindow(Frame):
 		### either change the value in the loadtxt function or change the name of the file. If it is in another
 		### directory than the one where your script is, give the full pathname of the file.
 		### If you file has no header, just beer names and prices, set skiprows to 0.
-		lijst = np.loadtxt("beer_list.txt", dtype = "string", skiprows = 1)
+		lijst = np.loadtxt("beer_list.txt", dtype = "str", skiprows = 1)
 
 		global beers
 		beers = lijst[:, 0]
